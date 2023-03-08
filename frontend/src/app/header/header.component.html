@@ -1,0 +1,19 @@
+<header>
+  <div class="w3-margin">
+    <nav>
+      <a *ngIf="!this.authService.isLoggedIn" class="p-2 text-dark" routerLinkActive="active" routerLink="/log-in">Signin</a>
+    </nav>
+  </div>
+  <div id="MyClockDisplay" class="clock" onload="this.showTime()"></div>
+  <div *ngIf="this.authService.isLoggedIn" class="w3-conatainer w3-margin">
+    <div class="w3-row w3-right-align">
+      <div><p class="w3-margin">{{getuserRole()}}</p></div>
+      <div class="w3-dropdown-hover">
+        <button class="w3-btn w3-wide w3-indigo">{{currentUser['name']}} </button>
+        <div class="w3-dropdown-content w3-bar-block w3-border" style="right:0">
+          <button (click)="this.authService.doLogout()" class="w3-bar-item w3-button">Abmelden</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

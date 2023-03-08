@@ -1,0 +1,31 @@
+<div class="w3-container w3-margin">
+  <div class="auth-wrapper">
+    <form class="form-signin" [formGroup]="signinForm" (ngSubmit)="loginUser()">
+      <h3 class="h3 mb-3 font-weight-normal text-center">Please sign in</h3>
+      <div class="form-group">
+        <label>Email</label>
+        <input
+          type="email"
+          class="form-control w3-input w3-border-0"
+          formControlName="email"
+          placeholder="Enter email"
+          style="width:40%"
+          required
+        />
+      </div>
+      <div class="form-group w3-margin-top">
+        <label>Password</label>
+        <input
+          type="password"
+          class="form-control w3-input w3-border-0"
+          formControlName="password"
+          placeholder="Password"
+          style="width: 40%"
+        />
+      </div>
+      <button type="submit" class="w3-button w3-margin-top">Sign in</button>
+    </form>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

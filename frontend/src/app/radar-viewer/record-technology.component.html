@@ -1,0 +1,48 @@
+<div class="container w3-animate-zoom">
+  <div class="w3-modal-content">
+    <div class="w3-container w3-teal" style="height:80px;">
+      <span onclick="document.getElementById('tech-record').style.display='none'"
+        class="w3-button w3-display-topright">&times;
+      </span>
+    </div>
+    <form [formGroup]="technoForm" (ngSubmit)="this.onSubmit()" class="w3-container">
+      <p>
+        <label for="name">Name</label>
+        <input [required]="namerequired" id="name" type="text" formControlName="name" class="w3-input w3-border">
+      </p>
+      <p>
+        <label for="category">Category</label>
+        <select [required]="categoryrequired" id="category" formControlName="category" class="w3-input w3-border">
+          <option value="Techniques" selected>Technique</option>
+          <option value="Tools">Tool</option>
+          <option value="Languages & Frameworks">Framework/Languages</option>
+          <option value="Platforms">Platform</option>
+        </select>
+      </p>
+      <p>
+        <label for="category">Circle</label>
+        <select [required]="ringrequired" id="ring" formControlName="ring" class="w3-input w3-border">
+          <option value="">not specified</option>
+          <option value="Adopt">Adopt</option>
+          <option value="Trial">Trial</option>
+          <option value="Assess">Assess</option>
+          <option value="Hold">Hold</option>
+        </select>
+      </p>
+      <p>
+        <label for="desc_tech">Description (Technology)</label>
+        <textarea [required]="description_technologyrequired" class="w3-input w3-border" name="desc_tech" formControlName="description_technology" style="resize: none"></textarea>
+      </p>
+
+      <p>
+        <label for="desc_cat">Description (Classification)</label>
+        <textarea [required]="description_classificationrequired" class="w3-input w3-border" name="desc_cat" formControlName="description_classification"></textarea>
+      </p>
+      <p>
+        <button class="w3-button w3-blue-grey" type="submit" [disabled]="!technoForm.valid">{{buttontext}}</button>
+      </p>
+    </form>
+  </div>
+
+  <router-outlet></router-outlet>
+</div>
