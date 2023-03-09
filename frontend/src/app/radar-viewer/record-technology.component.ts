@@ -31,7 +31,7 @@ export class RecordTechnologyComponent {
   selectedTechnology;
 
   current_uid;
-  @Input() buttontext: string = "Erfassen"
+  @Input() buttontext: string = "Record"
   @Input() changePublishedEvent: Observable<Technology>;
   @Input() changeRecordedEvent: Observable<Technology>;
   @Input() publishEvent: Observable<Technology>;
@@ -66,7 +66,6 @@ export class RecordTechnologyComponent {
     this.selectedTechnology = technology;
     this.setFromvalues(technology);
     this.setAllRequired();
-    console.log(this.description_classificationrequired)
     this.availabilityInputModifyPublished();
   }
 

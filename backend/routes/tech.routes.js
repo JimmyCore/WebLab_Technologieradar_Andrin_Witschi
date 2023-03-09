@@ -9,6 +9,7 @@ const { check, validationResult } = require('express-validator')
 
 
 Techrouter.post('/record-technology', (req, res) => {
+  console.log("Erstellen: " + req.body)
   const technology = new techSchema({
     name: req.body.name,
     category: req.body.category,
@@ -16,7 +17,7 @@ Techrouter.post('/record-technology', (req, res) => {
     description_technology: req.body.description_technology,
     description_classification: req.body.description_classification,
     published: false,
-    classification_history: [req.body.ring]
+    classification_history: []
   })
   technology.save().then((response) => {
       res.status(201).json({
