@@ -123,7 +123,7 @@ export class RadarViewerComponent implements OnInit {
         .attr("dy", ".35em")
         .attr('fill', 'white')
         .style("font-size", "14px")
-        .text("Assess")
+        .text("Trial")
 
     techniques.append("text")
         .attr("x", domainwidth / 2 - ((domainheight) / 8 * 3) + 25)
@@ -131,7 +131,7 @@ export class RadarViewerComponent implements OnInit {
         .attr("dy", ".35em")
         .attr('fill', 'white')
         .style("font-size", "14px")
-        .text("Trial")
+        .text("Assess")
 
     techniques.append("text")
         .attr("x", domainwidth / 2 - ((domainheight) / 8) + 25)
