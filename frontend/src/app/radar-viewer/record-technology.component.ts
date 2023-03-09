@@ -147,6 +147,7 @@ export class RecordTechnologyComponent {
       if (res.result) {
         this.techService.handleModification({_id: this.current_uid, action:'recorded'}).subscribe((res) => {})
         this.technoForm.reset();
+        location.reload();
       }
     });
   }
@@ -189,7 +190,7 @@ export class RecordTechnologyComponent {
         }
         this.techService.updateTechnology(updatedtechnology).subscribe((res) => {
           this.techService.handleModification({_id: this.current_uid, action:'change_category'}).subscribe((res) => {})
-          //location.reload();
+          location.reload();
         });
       }
     });
